@@ -17,15 +17,11 @@ export const schema = Joi.object({
 	/**
 	 * The strategy used to perform the whitelist checks.
 	 */
-	strategy: Joi.string()
-		.valid("auth", "global")
-		.default("global"),
+	strategy: Joi.string().valid("auth", "global").default("global"),
 	/**
 	 * The IP addresses or patterns that are granted access.
 	 */
-	whitelist: Joi.array()
-		.items(Joi.string())
-		.default(["*"]),
+	whitelist: Joi.array().items(Joi.string()).default(["*"]),
 	/**
 	 * Whether or not we will check headers for the IP address.
 	 */
